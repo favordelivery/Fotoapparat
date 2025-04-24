@@ -161,10 +161,22 @@ fotoapparat.switchTo(
 Add dependency to your `build.gradle`
 
 ```groovy
-implementation 'io.fotoapparat:fotoapparat:2.7.0'
+implementation 'io.fotoapparat:fotoapparat:2.7.0-favor'
 ```
 
 Camera permission will be automatically added to your `AndroidManifest.xml`. Do not forget to request this permission on Marshmallow and higher.
+
+## Publishing
+
+This repo does not support automated publishing. The version must be updated in the build.gradle file under
+`publications`. In addition, the global gradle.properties file must contain two new properties:
+```
+FotoapparatRepoUsername=favordelivery
+FotoapparatRepoPassword=<token_here>
+```
+Once those are in place, then running the command
+`publishFotoapparatPublicationToFotoapparatRepoRepository` will publish the package to the internal
+copy of this repo.
 
 ## Face detection
 
